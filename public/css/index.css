@@ -1,0 +1,394 @@
+/* 
+ * 登录 
+ */
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html, body {
+    height: 100%;
+    /* background-image: url("../images/bg1.jpg"); */
+    background-size: cover;
+    font-family: '微软雅黑', Courier, monospace;
+    font-weight: 500;
+
+}
+
+body::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    background-image: url("../images/bg1.jpg");
+    background-size: cover;
+    filter: blur(70px) opacity(70%);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.wrap, .login-box {
+    width: 100%;
+    height: 100%;
+}
+
+.login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* display: none; */
+}
+
+.login {
+    width: 420px;
+    height: 420px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .8)
+}
+
+.login .title h3 {
+    width: 100%;
+    margin: 25px auto;
+    font-size: 16px;
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+}
+
+.login-from {
+    display: flex;
+    flex-direction: column;
+    margin: 0 40px;
+}
+
+.login label {
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+
+.login-input {
+    height: 30px;
+    font-size: 12px;
+    color: #333;
+    border: 1px solid rgb(185, 185, 185);
+    outline: none;
+    text-indent: 10px;
+}
+
+.login .avatar-tag {
+    margin-top: 20px;
+}
+
+
+.avatar-box ul {
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid rgb(185, 185, 185);
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.avatar-box li {
+    margin: 10px 0 0 10px;
+    width: 55px;
+    height: 55px;
+}
+
+.avatar-box li:hover {
+    outline: 2px solid green;
+}
+
+.avatar-box img {
+    width: 100%;
+}
+
+.avatar-hover {
+    outline: 2px solid green;
+}
+
+.send-btn {
+    margin-top: 25px;
+    height: 38px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff;
+    background-color: green;
+    border: none;
+}
+
+/*
+ * 聊天左侧列表
+ */
+.container-box {
+    display: none;
+    /* justify-content: center;
+    align-items: center; */
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 950px;
+    height: 100%;
+    background: #fff;
+}
+
+.user-left {
+    width: 220px;
+    height: 100%;
+    background-color: rgb(46, 53, 71);
+}
+
+.user-info, .user-list, .user-item {
+    width: 100%;
+    height: 64px;
+    /* border: 1px solid #666; */
+}
+
+.user-info, .user-item {
+    display: flex;
+    align-items: center;
+    background-color: rgb(39, 48, 71);
+}
+
+.user-avatar, .item-avatar {
+    margin-left: 15px;
+    margin-right: 10px;
+    width: 38px;
+    height: 38px;
+    border-radius: 5px;
+
+}
+
+.user-left .username {
+    font-size: 12px;
+    color: #9ca2ae;
+}
+
+.user-tag {
+    margin-top: 10px;
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    font-size: 12px;
+    color: #9ca2ae;
+    text-indent: 15px;
+    border-bottom: 2px solid rgb(58, 67, 89);
+    box-sizing: border-box;
+}
+
+.user-item {
+    cursor: pointer;
+    border-bottom: 1px solid rgb(58, 67, 89);
+    box-sizing: border-box;
+}
+
+/* 
+ *聊天内容区
+ */
+.content-box {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    background: rgb(241, 241, 241);
+}
+
+.content-header {
+    margin: 0 30px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.content-header h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.message-box {
+    flex: 1;
+    padding: 0 20px;
+    width: 100%;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.message-box .tips, .time {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: rgb(216, 216, 216);
+
+}
+
+.message-box .time {
+    margin-bottom: 20px;
+}
+
+.message-box .my-box, .other-box {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    margin-bottom: 20px;
+    /* border: 1px solid #333; */
+    padding-bottom: 30px;
+    box-sizing: border-box;
+}
+
+.message-box .my-box {
+    margin-top: 20px;
+    justify-content: flex-end;
+}
+
+.message-box .other-box {
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.message-box .my-msg, .other-msg {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(40, 221, 64);
+
+}
+
+.other-msg {
+    background-color: #fff;
+
+}
+
+.my-image, .other-image {
+    margin-top: 10px;
+    width: 160px;
+    height: 160px;
+}
+
+.message-box .my-avatar, .nickname-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.message-box .my-avatar {
+    margin-left: 10px;
+}
+
+.message-box .nickname-avatar {
+    margin-right: 10px;
+}
+
+.message-box .nickname {
+    /* margin-top: 20px; */
+    margin-bottom: 2px;
+    color: #333;
+}
+
+/*
+ *文字编辑区
+ */
+.edit {
+    height: 220px;
+    border-top: 1px solid rgb(216, 216, 216);
+}
+
+.edit .toolbar {
+    display: flex;
+    margin: 10px 0 0 10px;
+}
+
+.edit .toolbar a {
+    /* margin: 10px; */
+    text-decoration: none;
+}
+
+.edit .face, .screen-cut, .file {
+    display: block;
+    width: 28px;
+    height: 24px;
+
+}
+
+.edit .face {
+    background: url("../images/wechat-sprit.png") no-repeat;
+    background-position: -405px -400px;
+}
+
+.edit .screen-cut {
+    background: url("../images/wechat-sprit.png") no-repeat;
+    background-position: -30px -433px;
+}
+
+.edit .file {
+    background: url("../images/wechat-sprit.png") no-repeat;
+    background-position: -118px -433px;
+}
+
+.edit .file label {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+}
+
+.edit .file input {
+    display: none;
+}
+
+.edit-msg {
+    margin: 10px 0;
+    padding: 0 10px;
+    width: 100%;
+    height: 100px;
+    outline: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.msg-send {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.msg-send .btn-send {
+    margin-right: 10px;
+    width: 90px;
+    height: 30px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    border: 1px solid #999;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.btn-send:hover {
+    background: rgb(241, 241, 241);
+}

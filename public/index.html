@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>聊天室</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="lib/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="lib/css/jquery.emoji.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <!-- 主容器 -->
+    <div class="wrap">
+
+        <!-- 登录区 -->
+        <div class="login-box">
+
+            <!-- 登录界面容器 -->
+            <div class="login">
+
+                <!-- 登录标题 -->
+                <div class="title">
+                    <h3>用户登录</h3>
+                </div>
+
+                <!-- 登录窗口 -->
+                <div class="login-from">
+                    <label class="login-tag">用户名</label>
+                    <input type="text" placeholder="" class="login-input">
+                    <label class="avatar-tag">头像选择</label>
+
+                    <!-- 头像框 -->
+                    <div class="avatar-box">
+                        <ul>
+                            <li class="avatar-hover"><img src="images/avatar01.jpg" alt=""></li>
+                            <li><img src="images/avatar02.jpg" alt=""></li>
+                            <li><img src="images/avatar03.jpg" alt=""></li>
+                            <li><img src="images/avatar04.jpg" alt=""></li>
+                            <li><img src="images/avatar05.jpg" alt=""></li>
+                            <li><img src="images/avatar06.jpg" alt=""></li>
+                            <li><img src="images/avatar07.jpg" alt=""></li>
+                            <li><img src="images/avatar08.jpg" alt=""></li>
+                            <li><img src="images/avatar09.jpg" alt=""></li>
+                            <li><img src="images/avatar10.jpg" alt=""></li>
+                        </ul>
+                    </div>
+                    <button class="send-btn">登录</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 聊天区 -->
+        <div class="container-box">
+
+            <!-- 聊天容器 -->
+            <div class="container">
+
+                <!-- 左侧用户列表 -->
+                <div class="user-left">
+                    <div class="user-info">
+                        <!-- <img src="images/avatar01.jpg" alt="" class="user-avatar">
+                        <span class="username">小王</span> -->
+                    </div>
+                    <div class="user-tag">
+                        <h3>用户列表</h3>
+                    </div>
+                    <div class="user-list">
+                        <ul>
+                            <!-- <li class="user-item">
+                                <img src="images/avatar02.jpg" alt="" class="item-avatar">
+                                <span class="username">小美</span>
+                            </li>
+                            <li class="user-item">
+                                <img src="images/avatar03.jpg" alt="" class="item-avatar">
+                                <span class="username">小美</span>
+                            </li>
+                            <li class="user-item">
+                                <img src="images/avatar04.jpg" alt="" class="item-avatar">
+                                <span class="username">小美</span>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 聊天内容容器 -->
+                <div class="content-box">
+                    <!-- 聊天室标题 -->
+                    <div class="content-header">
+                        <h3 class="header-title">聊天室</h3>
+                    </div>
+
+                    <!-- 正在聊天 -->
+                    <div class="message-box">
+                        <!-- <div class="tips">
+                            <h5>李四加入了群聊</h5>
+                        </div>
+                        <div class="time">11:22</div> -->
+                        <!-- <div class="my-box">
+                            <div class="my-msg">干嘛呢</div>
+                            <img src="images/avatar01.jpg" alt="" class="my-avatar">
+                        </div>
+
+                        <div class="other-box">
+                            <div class="other-info">
+                                <img src="images/avatar02.jpg" alt="" class="nickname-avatar">
+                            </div>
+                            <div class="other-msg-box">
+                                <h5 class="nickname">赵六</h5>
+                                <div class="other-msg">吃饭呢</div>
+                            </div>
+
+                        </div>
+
+                        <div class="other-box">
+                            <div class="other-info">
+                                <img src="images/avatar02.jpg" alt="" class="nickname-avatar">
+                            </div>
+                            <div class="other-msg-box">
+                                <h5 class="nickname">赵六</h5>
+                                <div class="other-msg">吃饭呢</div>
+                            </div>
+
+                        </div> -->
+                    </div>
+
+                    <!-- 文字编辑 -->
+                    <div class="edit">
+                        <div class="toolbar">
+                            <a href="javascript:;" title="表情" class="face"></a>
+                            <a href="javascript:;" title="剪切" class="screen-cut"></a>
+                            <a href="javascript:;" title="文件" class="file">
+                                <label for="file"></label>
+                                <input type="file" id="file" style="display: none;">
+                            </a>
+                        </div>
+                        <div class="edit-msg" contenteditable="true" id="edit-msg"></div>
+                        <div class="msg-send">
+                            <button class="btn-send">发送</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-1.12.4.js"></script>
+    <script src="js/socket.io.js"></script>
+    <script src="lib/js/jquery.mCustomScrollbar.min.js"></script>
+    <script src="lib/js/jquery.emoji.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
